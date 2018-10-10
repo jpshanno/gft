@@ -4,9 +4,11 @@ gft
 
 The goal of gft is to provide R functions to access the (Google Fusion
 Table API)\[<https://developers.google.com/fusiontables/>\]. Currently
-the package can - Get and cache an OAuth token - List table IDs and
-table names - Read tables and table descriptions - Write dataframes to a
-new table
+the package can  
+- Get and cache an OAuth token  
+- List table IDs and table names  
+- Read tables and table descriptions  
+- Write dataframes to a new table
 
 To Do
 -----

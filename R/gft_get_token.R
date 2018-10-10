@@ -1,6 +1,7 @@
 #' Fetch/Refresh a cached OAuth Token
 #'
 #' @param path
+#' @param file
 #'
 #' @return
 #' @export

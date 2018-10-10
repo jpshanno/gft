@@ -7,7 +7,7 @@
 gft_get_token(path = ".", file = ".httr-oauth")
 }
 \arguments{
-\item{path}{}
+\item{file}{}
 }
 \description{
 Fetch/Refresh a cached OAuth Token
