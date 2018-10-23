@@ -4,10 +4,15 @@
 \alias{gft_create}
 \title{Create a new Fusion Table from an R Object}
 \usage{
-gft_create(x, name)
+gft_create(x, name, ...)
 }
 \arguments{
-\item{name}{}
+\item{x}{An R object to be written to Google Fusion Table}
+
+\item{name}{A string representing the name of the new fusion table}
+
+\item{...}{Named arguements specifying path and file to direct
+\link{gt_get_token} to the cached OAuth token}
 }
 \description{
 Create a new Fusion Table from an R Object

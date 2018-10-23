@@ -1,28 +1,37 @@
 #' Create a new Fusion Table from an R Object
 #'
-#' @param x
-#' @param name
+#' @param x An R object to be written to Google Fusion Table
+#' @param name A string representing the name of the new fusion table
+#' @param ... Named arguements specifying path and file to direct
+#'   \link{gt_get_token} to the cached OAuth token
 #'
 #' @return
 #' @export
 #'
 #' @examples
 gft_create <-
-  function(x, name){
+  function(x,
+           name,
+           ...){
+
     if(is.character(quote(x))){
       table.file <- x
     } else {
       if(exists(deparse(substitute(x)))){
-        table.file <- tempfile()
+        table.file <- tempfile(fileext = ".csv")
+        if(any(grepl("^sf$", class(x)))){
+          x <- sf_to_kml(x)
+        }
         utils::write.csv(x,
-                         table.file,
-                         row.names = FALSE)
+                           file = table.file,
+                           row.names = FALSE)
+      } else {
+        stop(x, "does not exist in the current environment.")
       }
     }
 
-    if(is.null(token)){
-      token <- gft_get_token()
-    }
+    token <-
+      gft_get_token(...)
 
     # Add name check here for existing table
 
