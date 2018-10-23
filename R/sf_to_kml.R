@@ -1,15 +1,19 @@
 #' sf_to_kml
 #'
-#' @param x
+#' Convert sfc columns in an sf dataframe to KML text to allow automatic
+#' georeferencing when uploading to Google Fusion Tables.
 #'
-#' @return
+#' @param x A sf dataframe
+#'
+#' @return A dataframe with a new geometry column that is the KML text
+#' representation of the sf geometry information
 #' @export
 #'
 #' @examples
 sf_to_kml <-
   function(x){
     if(!any(grepl("^sf$", class(x)))){
-      stop("x must be a simple feature collection")
+      stop("x must be a simple feature dataframe")
     }
 
     geom_column <-

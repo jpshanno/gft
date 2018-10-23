@@ -4,11 +4,12 @@
 \alias{gft_list}
 \title{List your Fusion Table IDs and Names}
 \usage{
-gft_list(token = NULL)
+gft_list(...)
 }
 \arguments{
-\item{token}{}
+\item{...}{Named arguments specifying path and file to direct
+\link{gt_get_token} to the cached OAuth token}
 }
 \description{
-List your Fusion Table IDs and Names
+Return a dataframe containing the your Fusion Table IDs and names.
 }

@@ -1,6 +1,7 @@
-#' Authorise gft to access your Fusion Tables
+#' Authorize gft to access your Fusion Tables
 #'
-#' @param cache
+#' @param cache One of logical or character. See \link[httr]{oauth2.0_token} for
+#' more details
 #'
 #' @return
 #' @export

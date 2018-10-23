@@ -1,18 +1,19 @@
 #' List your Fusion Table IDs and Names
 #'
-#' @param token
+#' Return a dataframe containing the your Fusion Table IDs and names.
 #'
-#' @return
+#' @param ... Named arguments specifying path and file to direct
+#'   \link{gt_get_token} to the cached OAuth token or a token object
+#'
+#' @return A dataframe with two columns \code{ID} and \code{name}
 #' @export
 #'
 #' @examples
 gft_list <-
-  function(token = NULL){
+  function(...){
 
-    if(is.null(token)){
-      token <-
-        gft_get_token()
-    }
+    token <-
+      gft_get_token(...)
 
     url <- paste0("https://www.googleapis.com/fusiontables/v2/query?sql=SHOW+TABLES")
 

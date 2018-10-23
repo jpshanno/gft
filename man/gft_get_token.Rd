@@ -4,10 +4,14 @@
 \alias{gft_get_token}
 \title{Fetch/Refresh a cached OAuth Token}
 \usage{
-gft_get_token(path = ".", file = ".httr-oauth")
+gft_get_token(path = ".", file = ".httr-oauth", token = NULL)
 }
 \arguments{
-\item{file}{}
+\item{path}{A character string representing the path to a cached token}
+
+\item{file}{A character string representing the filename of a cached token}
+
+\item{token}{An object representing an OAuth token}
 }
 \description{
 Fetch/Refresh a cached OAuth Token

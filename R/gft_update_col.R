@@ -1,9 +1,13 @@
 #' Update a Fusion Table column's properties
 #'
-#' @param table.id
-#' @param column
-#' @param updates
-#' @param token
+#' @param table.id The Fusion Table ID containing the column you want to update
+#' @param column The column name to update
+#' @param updates The updates as a named list of properites to update (kind,
+#'   columnId, name, type). See
+#'   https://developers.google.com/fusiontables/docs/v2/using#CreatingColumn for
+#'   more information on column information
+#' @param ... Named arguments specifying path and file to direct
+#'   \link{gt_get_token} to the cached OAuth token or a token object
 #'
 #' @return
 #' @export
@@ -13,14 +17,12 @@ gft_update_col <-
   function(table.id,
            column,
            updates,
-           token = NULL){
+           ...){
 
     stopifnot(length(column) == 1)
     stopifnot(class(updates) == "list")
 
-    if(is.null(token)){
-      token <- gft_get_token()
-    }
+    token <- gft_get_token(...)
 
     url <-
       paste0("https://www.googleapis.com/fusiontables/v2/tables/",

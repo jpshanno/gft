@@ -1,7 +1,7 @@
 ---
 output:
   md_document:
-    variant: markdown_github
+    variant: gfm
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -16,26 +16,41 @@ knitr::opts_chunk$set(
 
 # gft
 
-The goal of gft is to provide R functions to access the (Google Fusion Table API)[https://developers.google.com/fusiontables/]. Currently the package can  
+The goal of `gft` is to provide R functions to access the (Google Fusion Table API)[https://developers.google.com/fusiontables/]. Currently the package can  
   - Get and cache an OAuth token  
   - List table IDs and table names  
   - Read tables and table descriptions  
   - Write dataframes to a new table  
+  - Run a query on a table and retreive the results
+
+## Installation
+
+Currently `gft` can be installed using devtools,
+```{r, echo = TRUE, eval = FALSE}
+devtools::install_github("jpshanno/gft")
+```
+
+or directly from downloaded source files
+```{r, echo = TRUE, eval = FALSE}
+gft_source <- tempfile(fileext = ".zip")
+download.file("https://github.com/jpshanno/gft/archive/master.zip",
+              gft_source)
+install.packages(gft_source, 
+                 repos = NULL,
+                 type = "source")
+```
+
 
 ## To Do
-At the moment I was focused on getting the functionality I needed for my work so
-documentation is non-existent, but I intend to improve that before tackling any
-knew features. These planned features will be added as Issues as the project 
+These planned features will be added as Issues as the project 
 matures.
 
   - [ ] Add example code to README
   - [ ] Add gft_append_rows
   - [ ] Add arguments to use table name not id
-  - [ ] Add checks if table name exists already (with override argument)
+  - [x] Add checks if table name exists already (with duplicate argument)
   - [ ] Add SQL escapes
-  - [ ] Include confirmations for DROP/DELETE
-  - [ ] Put in a call to gft_tables() and check for the table ID before attempting
-  to fetch
+  - [ ] Add DROP/DELETE table functions
   - [ ] Add an option to fetch column types for gft_fetch() and supply them to read_csv()
   - [ ] Output a sfc if there is a LOCATION type column, but this needs some testing
    to determine how to convert geocoded locations. Does gft give you the

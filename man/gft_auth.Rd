@@ -2,13 +2,14 @@
 % Please edit documentation in R/gft_auth.R
 \name{gft_auth}
 \alias{gft_auth}
-\title{Authorise gft to access your Fusion Tables}
+\title{Authorize gft to access your Fusion Tables}
 \usage{
 gft_auth(cache = TRUE)
 }
 \arguments{
-\item{cache}{}
+\item{cache}{One of logical or character. See \link[httr]{oauth2.0_token} for
+more details}
 }
 \description{
-Authorise gft to access your Fusion Tables
+Authorize gft to access your Fusion Tables
 }

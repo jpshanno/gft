@@ -1,22 +1,23 @@
 #' Return Description Information For Fusion Table
 #'
-#' @param table.id
-#' @param token
+#' Retreive desciptive information on a specific Fusion Table.
 #'
-#' @return
+#' @param table.id
+#' @param ... Named arguments specifying path and file to direct
+#'   \link{gt_get_token} to the cached OAuth token or a token object
+#'
+#' @return A named list containing table and column information
 #' @export
 #'
 #' @examples
 gft_describe <-
   function(table.id,
-           token = NULL){
+           ...){
 
     if(is.null(table.id) || !is.character(table.id)){
       stop("table.id must be NULL or a character vector representing a fusion table ID. Run gft_tables() to find table IDs")}
 
-    if(is.null(token)){
-      token <- gft_get_token()
-    }
+    token <- gft_get_token(...)
 
     url <- paste0("https://www.googleapis.com/fusiontables/v2/tables/", table.id)
 
@@ -31,6 +32,6 @@ gft_describe <-
                                          encoding = "UTF-8"))
       return(table_info)
     } else {
-      stop("Something went wrong and the table was not uploaded.")
+      stop("Something went wrong and the table was returned.")
     }
   }
