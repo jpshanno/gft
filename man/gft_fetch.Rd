@@ -4,11 +4,19 @@
 \alias{gft_fetch}
 \title{Return a tibble representing a Fusion Table}
 \usage{
-gft_fetch(table.id = NULL, query = NULL, token = NULL, ...)
+gft_fetch(table.id = NULL, query = NULL, ...)
 }
 \arguments{
-\item{...}{}
+\item{table.id}{A Fusion Table ID specifying which table to retreive data from}
+
+\item{query}{A query to run on the selected table}
+
+\item{...}{Named arguments specifying path and file to direct
+\link{gft_get_token} to the cached OAuth token or a token object}
+}
+\value{
+A dataframe of the query results
 }
 \description{
-Return a tibble representing a Fusion Table
+Run a SQL query on a fusion table and return the results as a dataframe
 }

@@ -5,12 +5,11 @@
 #' @param table.id A Fusion Table ID specifying which table to retreive data from
 #' @param query A query to run on the selected table
 #' @param ... Named arguments specifying path and file to direct
-#'   \link{gt_get_token} to the cached OAuth token or a token object
+#'   \link{gft_get_token} to the cached OAuth token or a token object
 #'
 #' @return A dataframe of the query results
 #' @export
 #'
-#' @examples
 gft_fetch <-
   function(table.id = NULL,
            query = NULL,

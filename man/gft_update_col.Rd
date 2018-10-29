@@ -4,10 +4,20 @@
 \alias{gft_update_col}
 \title{Update a Fusion Table column's properties}
 \usage{
-gft_update_col(table.id, column, updates, token = NULL)
+gft_update_col(table.id, column, updates, ...)
 }
 \arguments{
-\item{token}{}
+\item{table.id}{The Fusion Table ID containing the column you want to update}
+
+\item{column}{The column name to update}
+
+\item{updates}{The updates as a named list of properites to update (kind,
+columnId, name, type). See
+https://developers.google.com/fusiontables/docs/v2/using#CreatingColumn for
+more information on column information}
+
+\item{...}{Named arguments specifying path and file to direct
+\link{gft_get_token} to the cached OAuth token or a token object}
 }
 \description{
 Update a Fusion Table column's properties

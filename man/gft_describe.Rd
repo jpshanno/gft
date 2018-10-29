@@ -4,11 +4,17 @@
 \alias{gft_describe}
 \title{Return Description Information For Fusion Table}
 \usage{
-gft_describe(table.id, token = NULL)
+gft_describe(table.id, ...)
 }
 \arguments{
-\item{token}{}
+\item{table.id}{A string represnting a Google Fustion Table ID}
+
+\item{...}{Named arguments specifying path and file to direct
+\link{gft_get_token} to the cached OAuth token or a token object}
+}
+\value{
+A named list containing table and column information
 }
 \description{
-Return Description Information For Fusion Table
+Retreive desciptive information on a specific Fusion Table.
 }

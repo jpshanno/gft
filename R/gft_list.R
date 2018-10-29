@@ -3,12 +3,11 @@
 #' Return a dataframe containing the your Fusion Table IDs and names.
 #'
 #' @param ... Named arguments specifying path and file to direct
-#'   \link{gt_get_token} to the cached OAuth token or a token object
+#'   \link{gft_get_token} to the cached OAuth token or a token object
 #'
 #' @return A dataframe with two columns \code{ID} and \code{name}
 #' @export
 #'
-#' @examples
 gft_list <-
   function(...){
 

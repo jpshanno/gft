@@ -8,7 +8,10 @@ gft_list(...)
 }
 \arguments{
 \item{...}{Named arguments specifying path and file to direct
-\link{gt_get_token} to the cached OAuth token}
+\link{gft_get_token} to the cached OAuth token or a token object}
+}
+\value{
+A dataframe with two columns \code{ID} and \code{name}
 }
 \description{
 Return a dataframe containing the your Fusion Table IDs and names.

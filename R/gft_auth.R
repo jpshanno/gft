@@ -3,10 +3,9 @@
 #' @param cache One of logical or character. See \link[httr]{oauth2.0_token} for
 #' more details
 #'
-#' @return
+#' @return Nothing if cache = TRUE
 #' @export
 #'
-#' @examples
 gft_auth <-
   function(cache = TRUE){
     gft_endpoints <-

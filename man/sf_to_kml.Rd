@@ -10,8 +10,13 @@ sf_to_kml(x)
 \method{sf_to_kml}{sfc_POINT}(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{A sf dataframe}
+}
+\value{
+A dataframe with a new geometry column that is the KML text
+representation of the sf geometry information
 }
 \description{
-sf_to_kml
+Convert sfc columns in an sf dataframe to KML text to allow automatic
+georeferencing when uploading to Google Fusion Tables.
 }

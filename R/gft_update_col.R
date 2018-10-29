@@ -7,12 +7,10 @@
 #'   https://developers.google.com/fusiontables/docs/v2/using#CreatingColumn for
 #'   more information on column information
 #' @param ... Named arguments specifying path and file to direct
-#'   \link{gt_get_token} to the cached OAuth token or a token object
+#'   \link{gft_get_token} to the cached OAuth token or a token object
 #'
-#' @return
 #' @export
 #'
-#' @examples
 gft_update_col <-
   function(table.id,
            column,

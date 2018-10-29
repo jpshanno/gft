@@ -10,6 +10,9 @@ gft_auth(cache = TRUE)
 \item{cache}{One of logical or character. See \link[httr]{oauth2.0_token} for
 more details}
 }
+\value{
+Nothing if cache = TRUE
+}
 \description{
 Authorize gft to access your Fusion Tables
 }

@@ -4,7 +4,8 @@
 \alias{gft_get_token}
 \title{Fetch/Refresh a cached OAuth Token}
 \usage{
-gft_get_token(path = ".", file = ".httr-oauth", token = NULL)
+gft_get_token(path = ".", file = ".httr-oauth",
+  token = getOption("gft_token"))
 }
 \arguments{
 \item{path}{A character string representing the path to a cached token}
@@ -13,6 +14,11 @@ gft_get_token(path = ".", file = ".httr-oauth", token = NULL)
 
 \item{token}{An object representing an OAuth token}
 }
+\value{
+An object of class \link[httr]{Token}
+}
 \description{
-Fetch/Refresh a cached OAuth Token
+If \code{token} is supplied then the same token is returned. If a path and
+file are supplied then the token located there is loaded and refershed if
+necessary.
 }

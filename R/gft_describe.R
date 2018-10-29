@@ -2,14 +2,13 @@
 #'
 #' Retreive desciptive information on a specific Fusion Table.
 #'
-#' @param table.id
+#' @param table.id A string represnting a Google Fustion Table ID
 #' @param ... Named arguments specifying path and file to direct
-#'   \link{gt_get_token} to the cached OAuth token or a token object
+#'   \link{gft_get_token} to the cached OAuth token or a token object
 #'
 #' @return A named list containing table and column information
 #' @export
 #'
-#' @examples
 gft_describe <-
   function(table.id,
            ...){

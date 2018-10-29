@@ -1,4 +1,21 @@
-
+# library(sf)
+# library(maps)
+#
+# counties <-
+#   st_as_sf(map("county",
+#                "michigan",
+#                plot = FALSE,
+#                fill = TRUE))
+#
+# centers <-
+#   st_centroid(counties)
+#
+# plot(st_geometry(counties))
+# plot(st_geometry(centers), add = TRUE)
+#
+#
+# st_write(dsn = paste0("GFT:auth=", gft::gft_get_token("../Drive/Regional_Mapping/")$credentials$`access_token`),
+#          centers)
 
 # gft_auth
 

@@ -9,7 +9,6 @@
 #' representation of the sf geometry information
 #' @export
 #'
-#' @examples
 sf_to_kml <-
   function(x){
     if(!any(grepl("^sf$", class(x)))){
@@ -23,7 +22,6 @@ sf_to_kml <-
   }
 
 #' @rdname sf_to_kml
-#' @export
 sf_to_kml.sfc_POINT <-
   function(x){
     if(sf::st_crs(x)$epsg != 4326){

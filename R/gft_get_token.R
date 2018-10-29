@@ -11,11 +11,10 @@
 #' @return An object of class \link[httr]{Token}
 #' @export
 #'
-#' @examples
 gft_get_token <-
   function(path = ".",
            file = ".httr-oauth",
-           token = NULL){
+           token = getOption("gft_token")){
 
     if(!is.null(token)){
       return(token)
@@ -50,9 +49,26 @@ gft_get_token <-
     gft_token <-
       gft_token[[1]]
 
+    # Disable cacheing to avoid writing new .httr in current wd if that is
+    # different from location of token cache. Alternatively you could alter
+    # the cache_path, but that would lead to bad caches when using the token
+    # in another directory. So currenlty the refreshed token isn't cached but
+    # is just used for the current session.
+
+    old_cache_path <-
+      gft_token$cache_path
+
+    gft_token$cache_path <-
+      NULL
+
     if(!gft_token$validate()){
       gft_token$refresh()
     }
+
+    options(gft_token = gft_token)
+
+    gft_token$cache_path <-
+      old_cache_path
 
     return(gft_token)
   }
