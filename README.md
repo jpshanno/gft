@@ -2,6 +2,9 @@
 
 # gft
 
+*With Google’s announcement of the end of Fusion Tabls, gft will not be
+developed any further*
+
 The goal of `gft` is to provide R functions to access the [Google Fusion
 Table API](https://developers.google.com/fusiontables/). Currently the
 package can  
@@ -23,10 +26,12 @@ devtools::install_github("jpshanno/gft")
 or directly from downloaded source files
 
 ``` r
-gft_source <- tempfile(fileext = ".zip")
+gft_source <- file.path(tempdir(), "gft-master.zip")
 download.file("https://github.com/jpshanno/gft/archive/master.zip",
               gft_source)
-install.packages(gft_source, 
+unzip(gft_source,
+      exdir = dirname(gft_source))
+install.packages(sub(".zip$", "", gft_source), 
                  repos = NULL,
                  type = "source")
 ```
